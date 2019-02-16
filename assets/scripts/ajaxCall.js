@@ -1,13 +1,14 @@
 
 
 
-$("button").click(function(){
+$("button").click(function(event){
+    event.preventDefault();
     $.post("/api/viewtable",
     {
       "name": $("#tableName").val().trim(),
-      "phone": $("phoneNumber").val().trim(), 
-      "email": $("inputEmail1").val().trim(),
-      "id": $("tableId").val().trim()
+      "phone": $("#phoneNumber").val().trim(), 
+      "email": $("#inputEmail1").val().trim(),
+      "id": $("#tableId").val().trim()
     },
     function(data, status){
       if (data == true) {
