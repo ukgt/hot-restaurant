@@ -17,11 +17,22 @@ app.use(express.json());
 // =============================================================
 var customers = [
   {
-    routeName: "customer",
+    
     id: 123456,
     name: "Sam Smith",
     email: "sam@gmail.com",
     phone: "404-789-9999"
+    
+  }
+  
+];
+var waitList = [
+  {
+    
+    id: 12858585,
+    name: "Mary Smith",
+    email: "Mary@gmail.com",
+    phone: "404-789-9900"
     
   }
   
@@ -57,7 +68,7 @@ app.get("/api/viewtable", function(req, res) {
 });
 // Displays all waitList
 app.get("/api/viewwaitlist", function(req, res) {
-  return res.json(customers);
+  return res.json(waitList);
 });
 
 
